@@ -88,3 +88,30 @@
 1646467805 source:c:\users\uchenik\downloads\bigdissapointmentpaint-main\main.cpp
 	"bigProblemsPaint.h"
 
+1646472402 source:c:\users\glebs\downloads\su\figurecircle.cpp
+	"bigProblemsPaint.h"
+
+1646472402 c:\users\glebs\downloads\su\bigproblemspaint.h
+	<iostream>
+	<string>
+	<conio.h>
+	<windows.h>
+	<cmath>
+	<fstream>
+	<vector>
+
+1646472402 source:c:\users\glebs\downloads\su\figureline.cpp
+	"bigProblemsPaint.h"
+
+1646472402 source:c:\users\glebs\downloads\su\figurerectangle.cpp
+	"bigProblemsPaint.h"
+
+1646472402 source:c:\users\glebs\downloads\su\figurering.cpp
+	"bigProblemsPaint.h"
+
+1646472402 source:c:\users\glebs\downloads\su\itc_functions.cpp
+	"bigProblemsPaint.h"
+
+1647502755 source:c:\users\glebs\downloads\su\main.cpp
+	"bigProblemsPaint.h"
+

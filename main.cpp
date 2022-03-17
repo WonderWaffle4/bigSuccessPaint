@@ -179,8 +179,8 @@ bool checkLines(const vector<string> &commandsList){
             }
             for(int i = 1; i < words.size() - 1; i++){
                 if((i != words.size() - 1 && !isNumber(words[i])) ||
-                   (i != words.size() - 1 && isNumber(words[i]) && TrueIntFalseFloat(words[i]) && (words[0] == "L" || words[0] == "c" || words[0] == "C")) ||
-                   (i != words.size() - 1 && isNumber(words[i]) && !TrueIntFalseFloat(words[i]) && (words[0] == "r" || words[0] == "R"))){
+                   (i != words.size() - 1 && !isNumber(words[i]) && (words[0] == "L" || words[0] == "c" || words[0] == "C")) ||
+                   (i != words.size() - 1 && isNumber(words[i])  && (words[0] == "r" || words[0] == "R"))){
                     cout << i << " " << words.size() - 1 << " " << isNumber(words[i]);
                     return false;
                 }
@@ -203,6 +203,18 @@ void readFromFile(vector<string> &commandsList, ifstream &inputFromFile){
         commandsList.push_back(itc_rmFreeSpace(buffer));
 }
 
+string noPath(string path){
+    string newString = "";
+    int counter = itc_len(path) - 1;
+    for(counter; path[counter] != '\\' && counter > 0; counter--);
+    if(counter != 0)
+        counter++;
+    for(counter; counter < itc_len(path); counter++){
+        newString += path[counter];
+    }
+    return newString;
+}
+
 int main(int argc, char *argv[])
 {
     vector<string> canvas;
@@ -219,9 +231,9 @@ int main(int argc, char *argv[])
         cout << "ERROR: There are too few arguments!";
     else{
         ifstream inputFromFile(argv[1]);
-        if(!checkExtension(argv[1]))
+        if(!checkExtension(noPath(argv[1])))
             cout << "ERROR: Incorrect file extension!";
-        else if(!checkName(argv[1]))
+        else if(!checkName(noPath(argv[1])))
             cout << "ERROR: Incorrect file name!";
         else if(!inputFromFile)
             cout << "ERROR: File not found!";
